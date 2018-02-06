@@ -15,14 +15,9 @@ namespace TowerDefense
 
         public void FireOnInvaders(Invader[] invaders)
         {
-            int index = 0;
-
-            while (index < invaders.Length)
+            for (int i = 0; i < invaders.Length; i++)
             {
-                Invader invader = invaders[index];
-                // do stuff with invader
-
-                index++;
+                Invader invader = invaders[i];
             }
         }
     }
