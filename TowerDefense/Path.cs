@@ -6,7 +6,7 @@ namespace TowerDefense
 {
     class Path
     {
-        // field
+
         private readonly MapLocation[] _path;
 
         // constructor
