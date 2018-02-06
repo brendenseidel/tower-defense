@@ -10,11 +10,20 @@ namespace TowerDefense
 
         public Tower(MapLocation location)
         {
-            if (!location.OnMap(this))
-            {
-                throw new OutOfBoundsException(x + ", " + y + " is outside the boundaries of the map.");
-            }
             _location = location;
+        }
+
+        public void FireOnInvaders(Invader[] invaders)
+        {
+            int index = 0;
+
+            while (index < invaders.Length)
+            {
+                Invader invader = invaders[index];
+                // do stuff with invader
+
+                index++;
+            }
         }
     }
 }
