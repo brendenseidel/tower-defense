@@ -6,7 +6,7 @@ namespace TowerDefense
     {
         static void Main(string[] args)
         {
-            
+            Tower tower = new Tower();
         }
     }
 }
