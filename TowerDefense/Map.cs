@@ -15,5 +15,15 @@ namespace TowerDefense
             Height = height;
         }
 
+        public bool OnMap(Point point)
+        {
+            bool inBounds = point.X < Width && 
+                            point.X >= 0 && 
+                            point.Y < Height && 
+                            point.Y >= 0;
+
+            return inBounds;
+        }
+
     }
 }
