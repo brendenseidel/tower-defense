@@ -6,8 +6,9 @@ namespace TowerDefense
 {
     class Path
     {
-
         private readonly MapLocation[] _path;
+
+        public int Length => _path.Length;
 
         // constructor
         public Path(MapLocation[] path)
