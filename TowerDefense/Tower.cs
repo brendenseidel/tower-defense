@@ -8,6 +8,7 @@ namespace TowerDefense
     {
         private const int _range = 1;
         private const int _power = 1;
+        private const double _accuracy = .75;
 
         private static readonly Random _random = new Random();
 
@@ -18,6 +19,11 @@ namespace TowerDefense
             _location = location;
         }
 
+        public bool IsSuccesfulShot()
+        {
+            return _random.NextDouble() < _accuracy;
+        }
+
         public void FireOnInvaders(Invader[] invaders)
         {
 
@@ -25,7 +31,20 @@ namespace TowerDefense
             {
                 if (invader.IsActive && _location.InRangeOf(invader.Location, _range))
                 {
-                    invader.DecreaseHealth(_power);
+                    if (IsSuccesfulShot())
+                    {
+                        invader.DecreaseHealth(_power);
+                        Console.WriteLine("Shot at and hit an invader!");
+
+                        if (invader.IsNeutralized)
+                        {
+                            Console.WriteLine("Neuralized an invader!");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Shot at and missed an invader");
+                    }
                     break;
                 }
             }
