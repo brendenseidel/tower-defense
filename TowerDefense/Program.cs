@@ -7,12 +7,14 @@ namespace TowerDefense
         static void Main(string[] args)
         {
             Map map = new Map(8, 5);
-
-            Point point = new Point(4, 2);
-
-            Point point2 = new Point(5, 3);
-
-            Console.WriteLine(point.DistanceTo(point2));
+            try
+            {
+                MapLocation mapLocation = new MapLocation(20, 20, map);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("That location is not on the map.");
+            }
         }
     }
 }
