@@ -34,8 +34,7 @@ namespace TowerDefense
                     if (IsSuccesfulShot())
                     {
                         invader.DecreaseHealth(_power);
-                        Console.WriteLine("Shot at and hit an invader!");
-
+                        
                         if (invader.IsNeutralized)
                         {
                             Console.WriteLine("Neuralized an invader!");
